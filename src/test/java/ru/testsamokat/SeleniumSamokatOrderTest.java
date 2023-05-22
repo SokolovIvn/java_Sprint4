@@ -25,11 +25,5 @@ public class SeleniumSamokatOrderTest extends Basetest {
 
     }
 
-    @Test
-    public void checkListFAQ() {
-
-
-    }
-
 
 }
