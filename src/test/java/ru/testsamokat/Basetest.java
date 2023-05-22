@@ -16,7 +16,6 @@ public class Basetest {
     WebDriver driver;
     SamokatPages pages;
 
-
     @Before
     public void setupTest() {
         WebDriverManager.firefoxdriver().setup();
