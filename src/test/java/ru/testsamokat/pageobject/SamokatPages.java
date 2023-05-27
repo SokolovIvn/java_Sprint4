@@ -17,7 +17,9 @@ public class SamokatPages {
     }
 
     // кнопка заказа в шапке
-    private By orderHeaderButton = By.className("Button_Button__ra12g");
+    private By orderHeaderButton = By.xpath("Button_Button__ra12g");
+
+    private By orderButtons = By.xpath("//button[contains(text(),'Заказать')]");
 
     // поле имени
     private By fieldInputName = By.xpath(".//input[@placeholder='* Имя']");
@@ -98,6 +100,12 @@ public class SamokatPages {
 
     public void clickHeaderOrderButton() {
         driver.findElement(orderHeaderButton).click();
+    }
+
+    public void clickOrderButton(int elem) {
+        WebElement element =driver.findElements(orderButtons).get(elem);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+        element.click();
     }
 
     public void fillSecondName(String secondName) {
